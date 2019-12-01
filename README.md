@@ -1,17 +1,35 @@
 ### Android Commons ###
 
-[![Maven Central][mvn-img]][mvn-url]
-[![Size][size-img]][size-url]
-
 Various useful utilities for Android apps development.
 
-API documentation provided as [Javadoc][javadoc-url].
+[![](https://jitpack.io/v/Aidenat9/commons.svg)](https://jitpack.io/#Aidenat9/commons)
 
 ### Usage ###
 
-Add dependency to your build.gradle file:
 
-    compile 'com.alexvasilkov:android-commons:2.0.2'
+Step 1. Add the JitPack repository to your build file
+
+    gradle
+    maven
+    sbt
+    leiningen
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+Step 2. Add the dependency
+
+	dependencies {
+	        implementation 'com.github.Aidenat9:commons:v1.0.0'
+	}
+
+
 
 ### Main features ###
 
