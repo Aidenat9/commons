@@ -5,8 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import com.aiden.android.commons.state.InstanceState;
 import com.aiden.android.commons.ui.Views;
+import com.aiden.android.commons.utils.ToastUtil;
+import com.aiden.android.commons.utils.permission.IPermissionCallback;
+import com.aiden.android.commons.utils.permission.PermissionUtils;
+import com.hjq.toast.ToastUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,6 +26,19 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
+        //
+        ToastUtils.init(getApplication());
+        PermissionUtils.getInstance().checkCameraPermission(this, new IPermissionCallback() {
+            @Override
+            public void onGranted() {
+                ToastUtil.show("granted");
+            }
+
+            @Override
+            public void onDenied() {
+                ToastUtil.show("onDenied");
+            }
+        });
     }
 
 }

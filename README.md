@@ -71,6 +71,17 @@ ImageView that will be scaled to fit entire available width preserving aspect ra
 
 #### BoundedFrameLayout & BoundedLinearLayout & BoundedRelativeLayout ####
 Base view groups implementations that allows setting maxWidth and maxHeight.
+#### PermissionUtils ####
+权限判断工具类
+#### SpUtil ####
+微信开源mmkv封装工具
+#### RoundCornerImageView ####
+圆角矩形图片
+#### ImageLoaderImpl ####
+图片加载工具实现
+
+
+#### 其他一些工具请下载源码查看 ####
 
 
 #### License ####

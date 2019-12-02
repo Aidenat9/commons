@@ -1,22 +1,42 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.Aidenat9'
 // group='com.github.你的github用户名'
-
+def dpc = rootProject.ext.dependencies
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.3'
+    compileSdkVersion ANDROID_COMPILE_SDK.toInteger()
+    buildToolsVersion ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 25
+        minSdkVersion ANDROID_MIN_SDK.toInteger()
+        targetSdkVersion ANDROID_TARGET_SDK.toInteger()
         versionCode VERSION_CODE.toInteger()
         versionName VERSION_NAME
     }
 }
 
 dependencies {
-    implementation 'com.google.code.gson:gson:2.7'
-    implementation 'com.android.support:support-v4:25.3.1'
-    implementation 'com.android.support:customtabs:25.3.1'
+    api dpc["constraint"]
+    api dpc["appcompat-v7"]
+    api dpc["design"]
+    //适配8.0toast
+    api dpc["toast8.0"]
+    api dpc["multidex"]
+//    api dpc["cardView"]
+    api dpc["recyclerView"]
+    api dpc["gson"]
+    //状态栏变色
+    api dpc["immersionbar"]
+
+    //noinspection GradleCompatible
+    api 'com.android.support:customtabs:28.0.0'
+    //动态获取权限封装
+    api dpc["andpermission"]
+    api dpc["mmkv"]
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
